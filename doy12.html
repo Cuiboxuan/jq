@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form >
+		账号：
+		<input  id="b1" onblur="a()"/>
+		<span id="span1"></span>
+		<br />
+		密码：
+		<input id="b2" onblur="a_1()" />
+		<span id="span2"></span>	
+		<br />
+		确认密码：
+		<input id="b3" onblur="a_2()" />
+		<span id="span3"></span>	
+		<br />
+		随机数：
+		<input id="b4" disabled/>
+		<input type="button" value="点击获取随机数" onclick="a_3()"/>
+		
+		
+		</form>
+	</body>
+	<script>
+	//获取随机数
+	function a_3(){
+		var cc=document.getElementById("b4")
+		var cc=cc.value="jk_jsl_"+Math.floor(Math.random()*899999+100000)
+	}
+		
+		
+		
+	//密码
+	function a_1(){
+		var c=document.getElementById("b2").value
+		var span=document.getElementById("span2")
+		var zz=/^[0-9a-zA-Z]{3,}$/
+		if (zz.test(c)) {
+			span.innerHTML="√"
+			return true
+		}else{
+		span.innerHTML="请输入数字、字母3位以上"
+			return false	
+		}
+	}
+	//确认密码
+	function a_2(){
+		var c=document.getElementById("b3").value
+		var c1=document.getElementById("b2").value
+		var span=document.getElementById("span3")
+		if (c==c1&&c!="") {
+			span.innerHTML="√"
+			return true
+		}else{
+			span.innerHTML="两次密码不一致"
+			return false
+		}
+		
+		
+	}
+	
+
+	//账号	
+	function a(){
+	var c=document.getElementById("b1").value
+	var span=document.getElementById("span1")
+	var zz=/^[0-9a-zA-Z_]{6,12}$/
+		if (zz.test(c)) {
+			span.innerHTML="√"
+			return true
+		}else{
+			span.innerHTML="请输入数字、字母、下划线至少6-12位"
+			return false
+		}
+	}
+		
+		
+		
+		
+//	/^$/
+//	^ 是以什么开头
+//	$是以什么结尾
+//	[a-z]小写全部英文
+//	[A-Z]大写全部英文
+//	[a-zA-Z]支持所有的英文
+//	[\u4e00-\u9fa5] 支持中文的
+//	[0-9]全部数字
+//	现在需要 一个文本框是 支持正文两位
+//	/^[\u4e00-\u9fa5]{2,}$/
+//	/^\d{5}$/		数字只能是五位
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>
